@@ -1,0 +1,1954 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Sage Studio — Landing pages and logos for local businesses. Built in days, not weeks.</title>
+<meta name="description" content="Sage Studio designs landing pages and logos for small businesses across South Wales and the UK. AI speed, human craft. From £300, fixed price. Days, not weeks." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --sage-deep: #2c3a30;
+    --sage-mid: #5a6f5e;
+    --sage-soft: #c4ceb8;
+    --sage-mist: #e8ebe1;
+    --cream: #f4f0e8;
+    --paper: #fbf9f4;
+    --ink: #1a1f1c;
+    --accent: #d4633e;
+    --accent-soft: #e89372;
+    --hairline: rgba(26, 31, 28, 0.12);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+    font-weight: 400;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  .serif { font-family: 'Fraunces', serif; font-optical-sizing: auto; }
+  .mono { font-family: 'JetBrains Mono', monospace; }
+
+  /* Grain overlay */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.04 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 1;
+    mix-blend-mode: multiply;
+  }
+
+  /* ─── NAV ─── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 1.5rem 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    backdrop-filter: blur(12px);
+    background: rgba(251, 249, 244, 0.75);
+    border-bottom: 1px solid var(--hairline);
+  }
+
+  .logo-mark {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    text-decoration: none;
+    color: var(--ink);
+  }
+
+  .logo-mark svg { width: 28px; height: 28px; }
+
+  .logo-mark .name {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-size: 1.25rem;
+    letter-spacing: -0.01em;
+  }
+
+  .logo-mark .name em {
+    font-style: italic;
+    font-weight: 400;
+    color: var(--sage-mid);
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2.5rem;
+    align-items: center;
+    font-size: 0.9rem;
+  }
+
+  .nav-links a {
+    color: var(--ink);
+    text-decoration: none;
+    position: relative;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--sage-mid); }
+
+  .nav-links a.nav-cta {
+    background: var(--sage-deep);
+    color: var(--paper);
+    padding: 0.6rem 1.2rem;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: background 0.3s, transform 0.3s, color 0.3s;
+  }
+
+  .nav-links a.nav-cta:hover { background: var(--accent); color: var(--paper); transform: translateY(-1px); }
+
+  /* ─── HERO ─── */
+  .hero {
+    min-height: 100vh;
+    padding: 9rem 3rem 4rem;
+    position: relative;
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  .hero-bg::before {
+    content: '';
+    position: absolute;
+    top: -10%;
+    right: -15%;
+    width: 700px;
+    height: 700px;
+    background: radial-gradient(circle, var(--sage-soft) 0%, transparent 65%);
+    filter: blur(40px);
+    opacity: 0.55;
+  }
+
+  .hero-bg::after {
+    content: '';
+    position: absolute;
+    bottom: -20%;
+    left: -10%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, var(--accent-soft) 0%, transparent 60%);
+    filter: blur(60px);
+    opacity: 0.25;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    animation: rise 1s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  }
+
+  @keyframes rise {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.4rem 0.9rem;
+    background: var(--sage-mist);
+    border: 1px solid var(--sage-soft);
+    border-radius: 999px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--sage-deep);
+    margin-bottom: 2rem;
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  .eyebrow .dot {
+    width: 7px; height: 7px;
+    background: var(--accent);
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(1.3); }
+  }
+
+  h1.hero-title {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(3rem, 6.5vw, 6rem);
+    line-height: 0.98;
+    font-weight: 400;
+    letter-spacing: -0.035em;
+    margin-bottom: 1.8rem;
+    color: var(--ink);
+  }
+
+  h1.hero-title em {
+    font-style: italic;
+    font-weight: 300;
+    color: var(--sage-mid);
+    position: relative;
+  }
+
+  h1.hero-title .underline {
+    position: relative;
+    display: inline-block;
+  }
+
+  h1.hero-title .underline::after {
+    content: '';
+    position: absolute;
+    bottom: 0.05em;
+    left: 0; right: 0;
+    height: 0.18em;
+    background: var(--accent);
+    opacity: 0.35;
+    z-index: -1;
+    transform: skew(-2deg);
+  }
+
+  .hero-sub {
+    font-size: 1.15rem;
+    max-width: 540px;
+    color: var(--ink);
+    opacity: 0.78;
+    margin-bottom: 2.5rem;
+    line-height: 1.55;
+  }
+
+  .hero-cta {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 1rem 1.8rem;
+    border-radius: 999px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+    border: 1px solid var(--ink);
+  }
+
+  .btn-primary:hover {
+    background: var(--accent);
+    border-color: var(--accent);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(212, 99, 62, 0.25);
+  }
+
+  .btn-primary svg { transition: transform 0.3s; }
+  .btn-primary:hover svg { transform: translateX(4px); }
+
+  .btn-secondary {
+    color: var(--ink);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    padding: 1rem 0.5rem;
+    border-bottom: 1px solid var(--ink);
+    transition: color 0.2s, border-color 0.2s;
+  }
+
+  .btn-secondary:hover { color: var(--sage-mid); border-color: var(--sage-mid); }
+
+  .hero-meta {
+    margin-top: 3rem;
+    display: flex;
+    gap: 2.5rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.78rem;
+    color: var(--sage-mid);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .hero-meta div { display: flex; align-items: center; gap: 0.5rem; }
+  .hero-meta strong { color: var(--ink); font-family: 'Fraunces', serif; font-weight: 500; font-size: 1.5rem; letter-spacing: -0.02em; text-transform: none; }
+
+  /* Hero visual — stacked card composition */
+  .hero-visual {
+    position: relative;
+    z-index: 2;
+    height: 520px;
+  }
+
+  .visual-card {
+    position: absolute;
+    background: var(--paper);
+    border: 1px solid var(--hairline);
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 20px 50px -20px rgba(26, 31, 28, 0.25);
+    transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+
+  .visual-card.browser {
+    top: 0;
+    right: 0;
+    width: 90%;
+    height: 70%;
+    transform: rotate(2deg);
+    animation: float-1 6s ease-in-out infinite;
+  }
+
+  .visual-card.logo-card {
+    bottom: 0;
+    left: 0;
+    width: 55%;
+    height: 45%;
+    transform: rotate(-3deg);
+    background: var(--sage-deep);
+    color: var(--paper);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem;
+    animation: float-2 7s ease-in-out infinite;
+  }
+
+  .visual-card.tag {
+    top: 25%;
+    left: -5%;
+    background: var(--accent);
+    color: var(--paper);
+    padding: 0.7rem 1.2rem;
+    border-radius: 999px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.78rem;
+    transform: rotate(-8deg);
+    animation: float-3 5s ease-in-out infinite;
+    box-shadow: 0 10px 30px -8px rgba(212, 99, 62, 0.5);
+  }
+
+  @keyframes float-1 {
+    0%, 100% { transform: rotate(2deg) translateY(0); }
+    50% { transform: rotate(2deg) translateY(-12px); }
+  }
+  @keyframes float-2 {
+    0%, 100% { transform: rotate(-3deg) translateY(0); }
+    50% { transform: rotate(-3deg) translateY(-8px); }
+  }
+  @keyframes float-3 {
+    0%, 100% { transform: rotate(-8deg) translateY(0); }
+    50% { transform: rotate(-8deg) translateY(-6px); }
+  }
+
+  .browser-bar {
+    height: 28px;
+    background: var(--sage-mist);
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+    gap: 0.4rem;
+    border-bottom: 1px solid var(--hairline);
+  }
+
+  .browser-bar span {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--sage-soft);
+  }
+
+  .browser-content {
+    padding: 1.5rem 1.2rem;
+    height: calc(100% - 28px);
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .browser-content .skel-h {
+    height: 14px;
+    background: linear-gradient(90deg, var(--sage-soft) 0%, var(--sage-mist) 50%, var(--sage-soft) 100%);
+    background-size: 200% 100%;
+    border-radius: 3px;
+    animation: shimmer 2s infinite;
+  }
+
+  .browser-content .skel-h.short { width: 50%; height: 22px; background: var(--sage-deep); }
+  .browser-content .skel-h.med { width: 80%; }
+  .browser-content .skel-h.long { width: 95%; }
+  .browser-content .skel-btn {
+    width: 100px; height: 28px;
+    background: var(--accent); border-radius: 999px;
+    margin-top: 0.5rem;
+  }
+
+  @keyframes shimmer {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+  }
+
+  .logo-card-mark {
+    width: 60px; height: 60px;
+    border: 2px solid var(--sage-soft);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Fraunces', serif;
+    font-size: 1.8rem;
+    font-style: italic;
+    margin-bottom: 0.6rem;
+  }
+
+  .logo-card-name {
+    font-family: 'Fraunces', serif;
+    font-size: 1.05rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+  }
+
+  .logo-card-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    margin-top: 0.4rem;
+    opacity: 0.7;
+    letter-spacing: 0.1em;
+  }
+
+  /* ─── SECTION SHARED ─── */
+  section { position: relative; z-index: 2; }
+
+  .container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 3rem;
+  }
+
+  .section-eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.78rem;
+    color: var(--sage-mid);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+  }
+
+  .section-eyebrow::before {
+    content: '';
+    width: 30px; height: 1px;
+    background: var(--sage-mid);
+  }
+
+  .section-title {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(2.2rem, 4.2vw, 3.8rem);
+    line-height: 1.02;
+    font-weight: 400;
+    letter-spacing: -0.025em;
+    margin-bottom: 1rem;
+    max-width: 850px;
+  }
+
+  .section-title em { font-style: italic; color: var(--sage-mid); font-weight: 300; }
+
+  .section-lead {
+    font-size: 1.1rem;
+    max-width: 580px;
+    opacity: 0.75;
+    margin-bottom: 4rem;
+  }
+
+  /* ─── PROBLEM / POSITIONING ─── */
+  .positioning {
+    padding: 7rem 0;
+    background: var(--cream);
+    border-top: 1px solid var(--hairline);
+    border-bottom: 1px solid var(--hairline);
+  }
+
+  .compare-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+
+  .compare-card {
+    background: var(--paper);
+    border: 1px solid var(--hairline);
+    border-radius: 14px;
+    padding: 2rem;
+    transition: transform 0.3s, border-color 0.3s;
+  }
+
+  .compare-card:hover { transform: translateY(-4px); border-color: var(--sage-mid); }
+
+  .compare-card.featured {
+    background: var(--sage-deep);
+    color: var(--paper);
+    border-color: var(--sage-deep);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .compare-card.featured::before {
+    content: '';
+    position: absolute;
+    top: -50%; right: -50%;
+    width: 200%; height: 200%;
+    background: radial-gradient(circle, var(--sage-mid) 0%, transparent 60%);
+    opacity: 0.4;
+    pointer-events: none;
+  }
+
+  .compare-card .label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 1rem;
+    opacity: 0.6;
+  }
+
+  .compare-card.featured .label { color: var(--accent-soft); opacity: 1; }
+
+  .compare-card h3 {
+    font-family: 'Fraunces', serif;
+    font-weight: 400;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.01em;
+  }
+
+  .compare-list { list-style: none; }
+
+  .compare-list li {
+    padding: 0.7rem 0;
+    border-bottom: 1px dashed var(--hairline);
+    display: flex;
+    align-items: flex-start;
+    gap: 0.7rem;
+    font-size: 0.92rem;
+    line-height: 1.4;
+  }
+
+  .compare-card.featured .compare-list li { border-color: rgba(244, 240, 232, 0.15); }
+
+  .compare-list li:last-child { border-bottom: none; }
+
+  .compare-list .icon {
+    flex-shrink: 0;
+    width: 18px; height: 18px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 11px;
+    margin-top: 2px;
+    font-weight: 600;
+  }
+
+  .icon.no { background: var(--hairline); color: var(--ink); opacity: 0.5; }
+  .icon.yes { background: var(--accent); color: var(--paper); }
+  .compare-card.featured .icon.yes { background: var(--accent); }
+
+  /* ─── SERVICES / OFFER ─── */
+  .offer { padding: 8rem 0; }
+
+  .offer-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 4rem;
+    align-items: start;
+  }
+
+  .offer-text {
+    max-width: 720px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .offer-text .section-eyebrow { justify-content: center; }
+  .offer-text .section-eyebrow::before { display: none; }
+  .offer-text .section-title { margin-left: auto; margin-right: auto; }
+
+  .pricing-tiers {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    max-width: 980px;
+    margin: 0 auto;
+    width: 100%;
+    align-items: stretch;
+  }
+
+  .price-card {
+    background: var(--paper);
+    color: var(--ink);
+    border: 1px solid var(--hairline);
+    border-radius: 20px;
+    padding: 2.5rem;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.4s, border-color 0.4s, box-shadow 0.4s;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .price-card.starter:hover {
+    transform: translateY(-4px);
+    border-color: var(--sage-mid);
+  }
+
+  .price-card.studio {
+    background: var(--ink);
+    color: var(--paper);
+    border-color: var(--ink);
+    transform: rotate(-1deg) translateY(-8px);
+    box-shadow: 0 30px 60px -25px rgba(26, 31, 28, 0.4);
+  }
+
+  .price-card.studio:hover {
+    transform: rotate(0) translateY(-12px);
+    box-shadow: 0 35px 70px -25px rgba(26, 31, 28, 0.5);
+  }
+
+  .price-card.studio::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; height: 4px;
+    background: linear-gradient(90deg, var(--accent), var(--sage-mid), var(--sage-soft));
+  }
+
+  .price-card .ribbon {
+    position: absolute;
+    top: 1.5rem; right: -2.5rem;
+    background: var(--accent);
+    color: var(--paper);
+    padding: 0.4rem 3rem;
+    transform: rotate(45deg);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    box-shadow: 0 4px 12px rgba(212, 99, 62, 0.3);
+  }
+
+  .tier-name {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin-bottom: 1rem;
+    color: var(--sage-mid);
+  }
+
+  .price-card.studio .tier-name { color: var(--sage-soft); }
+
+  .price-tag {
+    font-family: 'Fraunces', serif;
+    font-size: 4.5rem;
+    font-weight: 300;
+    letter-spacing: -0.04em;
+    line-height: 1;
+    margin-bottom: 0.4rem;
+  }
+
+  .price-tag .currency {
+    font-size: 2.2rem;
+    vertical-align: super;
+    color: var(--sage-mid);
+  }
+
+  .price-card.studio .price-tag .currency { color: var(--sage-soft); }
+
+  .price-tag .all-in {
+    font-size: 0.85rem;
+    font-family: 'JetBrains Mono', monospace;
+    color: var(--sage-mid);
+    margin-left: 0.5rem;
+    letter-spacing: 0.05em;
+  }
+
+  .price-card.studio .price-tag .all-in { color: var(--sage-soft); }
+
+  .price-sub {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--sage-mid);
+    margin-bottom: 1.8rem;
+  }
+
+  .price-card.studio .price-sub { color: var(--sage-soft); }
+
+  .price-includes {
+    list-style: none;
+    margin-bottom: 2rem;
+    border-top: 1px solid var(--hairline);
+    padding-top: 1.5rem;
+    flex-grow: 1;
+  }
+
+  .price-card.studio .price-includes {
+    border-top-color: rgba(244, 240, 232, 0.15);
+  }
+
+  .price-includes li {
+    padding: 0.55rem 0;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.8rem;
+    font-size: 0.92rem;
+    line-height: 1.45;
+  }
+
+  .price-includes li::before {
+    content: '✓';
+    color: var(--accent);
+    font-weight: 600;
+    flex-shrink: 0;
+  }
+
+  .price-card.studio .price-includes li::before {
+    color: var(--accent-soft);
+  }
+
+  .price-includes li.bonus {
+    color: var(--sage-deep);
+    font-weight: 500;
+  }
+
+  .price-card.studio .price-includes li.bonus {
+    color: var(--accent-soft);
+    font-weight: 500;
+  }
+
+  .price-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    background: var(--ink);
+    color: var(--paper);
+    padding: 0.95rem 1.6rem;
+    border-radius: 999px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: all 0.3s;
+    border: 1px solid var(--ink);
+    text-align: center;
+  }
+
+  .price-card.starter .price-cta:hover {
+    background: var(--accent);
+    border-color: var(--accent);
+    transform: translateY(-2px);
+  }
+
+  .price-card.studio .price-cta {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: var(--paper);
+  }
+
+  .price-card.studio .price-cta:hover {
+    background: var(--paper);
+    color: var(--ink);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px -10px rgba(244, 240, 232, 0.3);
+  }
+
+  .price-cta svg { transition: transform 0.3s; }
+  .price-cta:hover svg { transform: translateX(4px); }
+
+  /* ─── ATELIER (third tier, custom path) ─── */
+  .atelier-card {
+    max-width: 980px;
+    margin: 2.5rem auto 0;
+    background: var(--sage-mist);
+    border: 1px solid var(--sage-soft);
+    border-radius: 20px;
+    padding: 2.5rem 3rem;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 2.5rem;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.4s, border-color 0.4s;
+  }
+
+  .atelier-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--sage-mid);
+  }
+
+  .atelier-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; bottom: 0; width: 4px;
+    background: linear-gradient(180deg, var(--sage-deep), var(--accent));
+  }
+
+  .atelier-mark {
+    width: 64px; height: 64px;
+    border: 1.5px solid var(--sage-deep);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 1.6rem;
+    color: var(--sage-deep);
+    flex-shrink: 0;
+    background: var(--paper);
+  }
+
+  .atelier-body .atelier-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .atelier-body .tier-name { margin-bottom: 0; color: var(--sage-deep); }
+
+  .atelier-body .atelier-price {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 0.95rem;
+    color: var(--sage-mid);
+  }
+
+  .atelier-body h3 {
+    font-family: 'Fraunces', serif;
+    font-weight: 400;
+    font-size: 1.5rem;
+    line-height: 1.15;
+    letter-spacing: -0.015em;
+    color: var(--ink);
+    margin-bottom: 0.6rem;
+  }
+
+  .atelier-body h3 em { font-style: italic; color: var(--sage-mid); font-weight: 300; }
+
+  .atelier-body p {
+    font-size: 0.95rem;
+    color: var(--ink);
+    opacity: 0.75;
+    line-height: 1.55;
+    margin-bottom: 0.8rem;
+  }
+
+  .atelier-tags {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  .atelier-tags span {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    background: var(--paper);
+    color: var(--sage-deep);
+    padding: 0.35rem 0.7rem;
+    border-radius: 999px;
+    border: 1px solid var(--sage-soft);
+  }
+
+  .atelier-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--sage-deep);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    border-bottom: 1px solid var(--sage-deep);
+    padding-bottom: 4px;
+    transition: color 0.3s, border-color 0.3s, gap 0.3s;
+    flex-shrink: 0;
+    white-space: nowrap;
+  }
+
+  .atelier-cta:hover {
+    color: var(--accent);
+    border-color: var(--accent);
+    gap: 0.8rem;
+  }
+
+  .offer-text h2 { margin-bottom: 1.5rem; }
+
+  .offer-text p {
+    font-size: 1.05rem;
+    margin-bottom: 1.5rem;
+    color: var(--ink);
+    opacity: 0.8;
+    line-height: 1.65;
+    max-width: 620px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .offer-text p strong { color: var(--sage-deep); font-weight: 600; }
+
+  /* ─── PROCESS ─── */
+  .process {
+    padding: 8rem 0;
+    background: var(--sage-deep);
+    color: var(--paper);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .process::before {
+    content: '';
+    position: absolute;
+    top: -50%; left: -20%;
+    width: 700px; height: 700px;
+    background: radial-gradient(circle, var(--sage-mid) 0%, transparent 60%);
+    opacity: 0.4;
+    pointer-events: none;
+  }
+
+  .process .section-eyebrow { color: var(--sage-soft); }
+  .process .section-eyebrow::before { background: var(--sage-soft); }
+  .process .section-title em { color: var(--sage-soft); }
+  .process .section-lead { color: var(--sage-soft); opacity: 0.85; }
+
+  .steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    position: relative;
+    z-index: 2;
+  }
+
+  .step {
+    position: relative;
+    padding-top: 2rem;
+  }
+
+  .step-num {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 4.5rem;
+    font-weight: 300;
+    color: var(--sage-soft);
+    opacity: 0.4;
+    line-height: 0.8;
+    margin-bottom: 1rem;
+  }
+
+  .step-title {
+    font-family: 'Fraunces', serif;
+    font-size: 1.4rem;
+    font-weight: 500;
+    margin-bottom: 0.7rem;
+    letter-spacing: -0.01em;
+  }
+
+  .step-text {
+    font-size: 0.95rem;
+    color: var(--sage-soft);
+    line-height: 1.55;
+  }
+
+  .step-time {
+    margin-top: 1rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--accent-soft);
+  }
+
+  /* ─── PORTFOLIO ─── */
+  .portfolio { padding: 8rem 0; }
+
+  .work-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+
+  .work-item {
+    position: relative;
+    border-radius: 14px;
+    overflow: hidden;
+    border: 1px solid var(--hairline);
+    background: var(--cream);
+    aspect-ratio: 4 / 3;
+    cursor: pointer;
+    transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+    text-decoration: none;
+    color: var(--ink);
+  }
+
+  .work-item:hover { transform: translateY(-6px); }
+
+  .work-item.large { grid-column: span 7; aspect-ratio: 16 / 10; }
+  .work-item.small { grid-column: span 5; }
+  .work-item.third { grid-column: span 4; aspect-ratio: 3 / 2; }
+
+  .work-bg {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .work-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 40%, rgba(26, 31, 28, 0.85) 100%);
+    z-index: 2;
+  }
+
+  .work-info {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    z-index: 3;
+    padding: 1.5rem;
+    color: var(--paper);
+  }
+
+  .work-info .cat {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    opacity: 0.7;
+    margin-bottom: 0.3rem;
+  }
+
+  .work-info h4 {
+    font-family: 'Fraunces', serif;
+    font-size: 1.4rem;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+  }
+
+  .work-info .arrow {
+    position: absolute;
+    top: -1.5rem; right: 1.5rem;
+    width: 36px; height: 36px;
+    background: var(--accent);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    transform: translateY(20px);
+    opacity: 0;
+    transition: all 0.3s;
+  }
+
+  .work-item:hover .work-info .arrow { transform: translateY(0); opacity: 1; }
+
+  /* Mock previews — different look per business */
+  .mock-ty {
+    background: linear-gradient(135deg, #1a2438 0%, #2d4159 100%);
+    color: #f4f0e8;
+    padding: 2rem;
+    width: 100%; height: 100%;
+    display: flex; flex-direction: column; justify-content: center; align-items: center;
+  }
+  .mock-ty .lg { font-family: 'Fraunces', serif; font-size: 2.5rem; font-weight: 600; letter-spacing: 0.1em; }
+  .mock-ty .accent { color: #f5b942; }
+
+  .mock-dragon {
+    background: linear-gradient(135deg, #6b1f1f 0%, #2c1010 100%);
+    color: #f4f0e8;
+    width: 100%; height: 100%;
+    display: flex; flex-direction: column; justify-content: center; align-items: center;
+    font-family: 'Fraunces', serif;
+  }
+  .mock-dragon .icon { font-size: 3rem; margin-bottom: 0.5rem; }
+  .mock-dragon .name { font-size: 1.5rem; letter-spacing: 0.15em; text-transform: uppercase; }
+
+  .mock-isca {
+    background: linear-gradient(135deg, #0a3a3a 0%, #1a5e5e 100%);
+    color: #c4f0e8;
+    width: 100%; height: 100%;
+    display: flex; flex-direction: column; justify-content: center; align-items: center;
+  }
+  .mock-isca .icon { font-size: 2.5rem; margin-bottom: 0.4rem; }
+  .mock-isca .name { font-family: 'Fraunces', serif; font-size: 1.4rem; letter-spacing: 0.05em; }
+
+  .mock-pass {
+    background: linear-gradient(135deg, #1e4d2b 0%, #4a8b5c 100%);
+    color: #f4f0e8;
+    width: 100%; height: 100%;
+    display: flex; flex-direction: column; justify-content: center; align-items: center;
+  }
+  .mock-pass .icon { font-size: 2.5rem; margin-bottom: 0.4rem; }
+  .mock-pass .name { font-family: 'Fraunces', serif; font-size: 1.3rem; }
+
+  .mock-davies {
+    background: linear-gradient(135deg, #2d4a1e 0%, #5e8c3a 100%);
+    color: #f4f0e8;
+    width: 100%; height: 100%;
+    display: flex; flex-direction: column; justify-content: center; align-items: center;
+  }
+  .mock-davies .icon { font-size: 2.5rem; }
+  .mock-davies .name { font-family: 'Fraunces', serif; font-size: 1.2rem; font-style: italic; }
+
+  .mock-bethan {
+    background: linear-gradient(135deg, #2d1b3d 0%, #6b3d8c 100%);
+    color: #f4e8f5;
+    width: 100%; height: 100%;
+    display: flex; flex-direction: column; justify-content: center; align-items: center;
+  }
+  .mock-bethan .icon { font-size: 2.5rem; }
+  .mock-bethan .name { font-family: 'Fraunces', serif; font-size: 1.4rem; font-style: italic; }
+
+  .mock-hearth {
+    background: linear-gradient(135deg, #2d1810 0%, #5e3018 100%);
+    color: #f4e8d8;
+    width: 100%; height: 100%;
+    display: flex; flex-direction: column; justify-content: center; align-items: center;
+  }
+  .mock-hearth .icon { font-size: 2.5rem; margin-bottom: 0.4rem; }
+  .mock-hearth .name { font-family: 'Fraunces', serif; font-size: 1.3rem; letter-spacing: 0.08em; }
+
+  .mock-skin {
+    background: linear-gradient(135deg, #c4a89a 0%, #e8d4c4 100%);
+    color: #4a2c20;
+    width: 100%; height: 100%;
+    display: flex; flex-direction: column; justify-content: center; align-items: center;
+  }
+  .mock-skin .icon { font-size: 2.5rem; }
+  .mock-skin .name { font-family: 'Fraunces', serif; font-size: 1.4rem; font-style: italic; }
+
+  /* ─── HOSTING ADVICE ─── */
+  .hosting {
+    padding: 8rem 0;
+    background: var(--cream);
+    border-top: 1px solid var(--hairline);
+    border-bottom: 1px solid var(--hairline);
+  }
+
+  .hosting-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 5rem;
+    align-items: start;
+  }
+
+  .hosting-options {
+    display: grid;
+    gap: 1rem;
+  }
+
+  .host-row {
+    display: grid;
+    grid-template-columns: 60px 1fr 100px;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    background: var(--paper);
+    border: 1px solid var(--hairline);
+    border-radius: 12px;
+    align-items: center;
+    transition: border-color 0.3s, transform 0.3s;
+  }
+
+  .host-row:hover { border-color: var(--sage-mid); transform: translateX(4px); }
+
+  .host-icon {
+    width: 50px; height: 50px;
+    background: var(--sage-mist);
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 1.4rem;
+    color: var(--sage-deep);
+  }
+
+  .host-info h4 {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-size: 1.15rem;
+    margin-bottom: 0.2rem;
+  }
+
+  .host-info p {
+    font-size: 0.85rem;
+    color: var(--ink);
+    opacity: 0.65;
+    line-height: 1.4;
+  }
+
+  .host-price {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85rem;
+    color: var(--sage-mid);
+    text-align: right;
+    font-weight: 500;
+  }
+
+  /* ─── FAQ ─── */
+  .faq { padding: 8rem 0; }
+
+  .faq-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 5rem;
+    align-items: start;
+  }
+
+  .faq-list { display: flex; flex-direction: column; }
+
+  .faq-item {
+    border-top: 1px solid var(--hairline);
+    padding: 1.8rem 0;
+    cursor: pointer;
+  }
+
+  .faq-item:last-child { border-bottom: 1px solid var(--hairline); }
+
+  .faq-q {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    font-family: 'Fraunces', serif;
+    font-size: 1.25rem;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    transition: color 0.2s;
+  }
+
+  .faq-item:hover .faq-q { color: var(--sage-mid); }
+
+  .faq-toggle {
+    width: 30px; height: 30px;
+    border: 1px solid var(--hairline);
+    border-radius: 50%;
+    flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    transition: all 0.3s;
+    font-size: 1.2rem;
+    line-height: 1;
+  }
+
+  .faq-item.open .faq-toggle {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: var(--paper);
+    transform: rotate(45deg);
+  }
+
+  .faq-a {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding-top 0.4s ease;
+    color: var(--ink);
+    opacity: 0.75;
+    line-height: 1.6;
+    font-size: 1rem;
+  }
+
+  .faq-item.open .faq-a {
+    max-height: 200px;
+    padding-top: 1rem;
+  }
+
+  /* ─── CTA / CONTACT ─── */
+  .contact {
+    padding: 8rem 0;
+    background: var(--ink);
+    color: var(--paper);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .contact::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at top, var(--sage-deep) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .contact-content {
+    position: relative;
+    z-index: 2;
+    max-width: 720px;
+    margin: 0 auto;
+  }
+
+  .contact h2 {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    line-height: 1;
+    font-weight: 400;
+    letter-spacing: -0.03em;
+    margin-bottom: 1.5rem;
+  }
+
+  .contact h2 em { font-style: italic; color: var(--sage-soft); font-weight: 300; }
+
+  .contact p {
+    font-size: 1.15rem;
+    color: var(--sage-soft);
+    margin-bottom: 3rem;
+    max-width: 520px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .contact-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.7rem;
+    background: var(--accent);
+    color: var(--paper);
+    padding: 1.2rem 2.4rem;
+    border-radius: 999px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.05rem;
+    transition: all 0.3s;
+    box-shadow: 0 10px 40px -10px rgba(212, 99, 62, 0.5);
+  }
+
+  .contact-cta:hover { transform: translateY(-3px); box-shadow: 0 15px 50px -10px rgba(212, 99, 62, 0.7); }
+
+  .contact-secondary {
+    margin-top: 2.5rem;
+    display: flex;
+    justify-content: center;
+    gap: 2.5rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85rem;
+    color: var(--sage-soft);
+    flex-wrap: wrap;
+  }
+
+  .contact-secondary a {
+    color: var(--sage-soft);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(196, 206, 184, 0.3);
+    padding-bottom: 2px;
+    transition: color 0.2s, border-color 0.2s;
+  }
+
+  .contact-secondary a:hover { color: var(--accent-soft); border-color: var(--accent-soft); }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: var(--ink);
+    color: var(--sage-soft);
+    padding: 2.5rem 0;
+    border-top: 1px solid rgba(244, 240, 232, 0.1);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.78rem;
+    text-align: center;
+    letter-spacing: 0.05em;
+    position: relative;
+    z-index: 2;
+  }
+
+  footer span { color: var(--accent-soft); }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 980px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { gap: 1.2rem; }
+    .nav-links a:not(.nav-cta) { display: none; }
+    .container { padding: 0 1.5rem; }
+    .hero { padding: 8rem 1.5rem 4rem; grid-template-columns: 1fr; gap: 3rem; }
+    .hero-visual { height: 380px; }
+    .hero-meta { flex-wrap: wrap; gap: 1.5rem; }
+    .compare-grid { grid-template-columns: 1fr; }
+    .offer-grid { gap: 3rem; }
+    .pricing-tiers { grid-template-columns: 1fr; gap: 1.5rem; max-width: 480px; }
+    .price-card.studio { transform: none; }
+    .price-card.studio:hover { transform: translateY(-4px); }
+    .atelier-card {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      padding: 2rem 1.8rem;
+      text-align: left;
+      max-width: 480px;
+    }
+    .atelier-card::before { width: 100%; height: 4px; bottom: auto; }
+    .atelier-card { padding-top: 2.3rem; }
+    .atelier-mark { margin: 0; }
+    .steps { grid-template-columns: 1fr 1fr; gap: 2.5rem 2rem; }
+    .work-grid { grid-template-columns: 1fr; }
+    .work-item.large, .work-item.small, .work-item.third { grid-column: span 1; aspect-ratio: 4/3; }
+    .hosting-grid, .faq-grid { grid-template-columns: 1fr; gap: 3rem; }
+    .host-row { grid-template-columns: 50px 1fr; gap: 1rem; }
+    .host-price { grid-column: 2; text-align: left; margin-top: 0.3rem; }
+    section { padding: 5rem 0 !important; }
+  }
+
+  @media (max-width: 600px) {
+    .steps { grid-template-columns: 1fr; }
+    .price-card { padding: 2rem 1.5rem; }
+    .price-tag { font-size: 3.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="logo-mark">
+    <svg viewBox="0 0 32 32" fill="none">
+      <circle cx="16" cy="16" r="15" stroke="#2c3a30" stroke-width="1.5"/>
+      <path d="M9 20 Q 12 8, 16 16 T 23 12" stroke="#5a6f5e" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+      <circle cx="23" cy="12" r="2" fill="#d4633e"/>
+    </svg>
+    <span class="name">Sage <em>Studio</em></span>
+  </a>
+  <div class="nav-links">
+    <a href="#offer">What you get</a>
+    <a href="#work">Work</a>
+    <a href="#process">Process</a>
+    <a href="#faq">FAQ</a>
+    <a href="#contact" class="nav-cta">Start a project</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <div class="eyebrow">
+      <span class="dot"></span>
+      <span>NEWPORT · SOUTH WALES · UK</span>
+    </div>
+    <h1 class="hero-title">
+      A landing page<br>
+      <em>and a logo</em><br>
+      for your business.<br>
+      <span class="underline">Built in days.</span>
+    </h1>
+    <p class="hero-sub">
+      Sage Studio designs landing pages and logos for small local businesses. AI does the heavy lifting. A real designer makes it sharp. One fixed price, no agency drag.
+    </p>
+    <div class="hero-cta">
+      <a href="#contact" class="btn-primary">
+        Start your project
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </a>
+      <a href="#work" class="btn-secondary">See the work</a>
+    </div>
+    <div class="hero-meta">
+      <div><strong>From £300</strong>&nbsp;fixed price</div>
+      <div><strong>3–5</strong>&nbsp;days turnaround</div>
+      <div><strong>8+</strong>&nbsp;Welsh businesses live</div>
+    </div>
+  </div>
+
+  <div class="hero-visual">
+    <div class="visual-card browser">
+      <div class="browser-bar"><span></span><span></span><span></span></div>
+      <div class="browser-content">
+        <div class="skel-h short"></div>
+        <div class="skel-h long"></div>
+        <div class="skel-h med"></div>
+        <div class="skel-h long"></div>
+        <div class="skel-btn"></div>
+      </div>
+    </div>
+    <div class="visual-card logo-card">
+      <div class="logo-card-mark">S</div>
+      <div class="logo-card-name">YOUR BRAND</div>
+      <div class="logo-card-tag">EST. NEXT WEEK</div>
+    </div>
+    <div class="visual-card tag">3–5 day delivery</div>
+  </div>
+</section>
+
+<!-- POSITIONING -->
+<section class="positioning">
+  <div class="container">
+    <div class="section-eyebrow">Where Sage Studio sits</div>
+    <h2 class="section-title">The middle ground that <em>actually exists.</em></h2>
+    <p class="section-lead">Most options force you to pick between cheap and good. We don't.</p>
+
+    <div class="compare-grid">
+      <div class="compare-card">
+        <div class="label">Option 1</div>
+        <h3>DIY AI builders</h3>
+        <ul class="compare-list">
+          <li><span class="icon yes">✓</span>Cheap monthly fee</li>
+          <li><span class="icon yes">✓</span>Fast to spin up</li>
+          <li><span class="icon no">×</span>Generic templates</li>
+          <li><span class="icon no">×</span>You build it yourself</li>
+          <li><span class="icon no">×</span>No logo strategy</li>
+          <li><span class="icon no">×</span>No one to call</li>
+        </ul>
+      </div>
+      <div class="compare-card featured">
+        <div class="label">★ Sage Studio</div>
+        <h3>AI speed, human craft</h3>
+        <ul class="compare-list">
+          <li><span class="icon yes">✓</span>Fixed price from £300</li>
+          <li><span class="icon yes">✓</span>3 to 5 day turnaround</li>
+          <li><span class="icon yes">✓</span>Custom logo, not a template</li>
+          <li><span class="icon yes">✓</span>Real designer, real conversation</li>
+          <li><span class="icon yes">✓</span>Hosting set up properly</li>
+          <li><span class="icon yes">✓</span>Local, accountable, on the phone</li>
+        </ul>
+      </div>
+      <div class="compare-card">
+        <div class="label">Option 3</div>
+        <h3>Traditional agency</h3>
+        <ul class="compare-list">
+          <li><span class="icon yes">✓</span>Real designers</li>
+          <li><span class="icon yes">✓</span>Custom design</li>
+          <li><span class="icon no">×</span>£1,500 to £5,000+</li>
+          <li><span class="icon no">×</span>4 to 8 weeks delivery</li>
+          <li><span class="icon no">×</span>Long contracts</li>
+          <li><span class="icon no">×</span>Overkill for a one-pager</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OFFER -->
+<section class="offer" id="offer">
+  <div class="container">
+    <div class="offer-grid">
+      <div class="offer-text">
+        <div class="section-eyebrow">What you get</div>
+        <h2 class="section-title">Two ways to <em>get launched.</em></h2>
+        <p>You don't need a fifty-page website. You need one good page that converts, a logo that doesn't look like ten thousand others, and someone to point you at decent hosting that won't trip you up six months in.</p>
+        <p><strong>Two fixed-price tiers to get launched today — and a custom path for businesses that need more.</strong> Both standard tiers are built with AI on the back-end and finished by a human, both go live in days.</p>
+      </div>
+
+      <div class="pricing-tiers">
+        <div class="price-card starter">
+          <div class="tier-name">Starter</div>
+          <div class="price-tag"><span class="currency">£</span>300<span class="all-in">fixed</span></div>
+          <div class="price-sub">Get online, simply.</div>
+          <ul class="price-includes">
+            <li>One custom-designed landing page, mobile-perfect</li>
+            <li>Custom logo with light, dark and icon variants</li>
+            <li>Lead capture form or WhatsApp click-through</li>
+            <li>Copy written for you, not stock filler</li>
+            <li>Hosting setup guidance and recommendations</li>
+            <li>One round of revisions</li>
+            <li>Live in five working days</li>
+          </ul>
+          <a href="#contact" class="price-cta">
+            Book Starter
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+
+        <div class="price-card studio">
+          <div class="ribbon">Recommended</div>
+          <div class="tier-name">Studio</div>
+          <div class="price-tag"><span class="currency">£</span>500<span class="all-in">fixed</span></div>
+          <div class="price-sub">Launched, properly.</div>
+          <ul class="price-includes">
+            <li>Everything in Starter, plus:</li>
+            <li class="bonus">Three rounds of revisions</li>
+            <li class="bonus">Custom photography sourcing &amp; image direction</li>
+            <li class="bonus">Google Business Profile setup</li>
+            <li class="bonus">Basic SEO meta &amp; analytics installed</li>
+            <li class="bonus">Priority three-day turnaround</li>
+            <li class="bonus">30-day post-launch tweak window</li>
+          </ul>
+          <a href="#contact" class="price-cta">
+            Book Studio
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="atelier-card">
+        <div class="atelier-mark">A</div>
+        <div class="atelier-body">
+          <div class="atelier-meta">
+            <div class="tier-name">Atelier</div>
+            <div class="atelier-price">— from £950, scoped to fit</div>
+          </div>
+          <h3>The full <em>brand-and-build</em>, for when one page isn't the whole story.</h3>
+          <p>Multi-page sites, mini brand systems, print-ready logo files for vans and signage, workwear and uniform advice, business cards and email signatures. For local businesses ready to look properly put-together — not just online, but out in the world.</p>
+          <div class="atelier-tags">
+            <span>Multi-page site</span>
+            <span>Brand mini-system</span>
+            <span>Print-ready logos</span>
+            <span>Workwear &amp; signage advice</span>
+            <span>Business cards</span>
+          </div>
+        </div>
+        <a href="#contact" class="atelier-cta">
+          Get a custom quote
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process" id="process">
+  <div class="container">
+    <div class="section-eyebrow">How it works</div>
+    <h2 class="section-title">Four steps, <em>three to five days.</em></h2>
+    <p class="section-lead">No drawn-out kick-off meetings. No statement-of-work theatre. Just a quick call, a sharp brief, and a finished site.</p>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">01</div>
+        <div class="step-title">A 20 minute call</div>
+        <div class="step-text">Tell me what your business does, who buys from you, and what success looks like. That's the brief.</div>
+        <div class="step-time">DAY 1</div>
+      </div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <div class="step-title">First draft</div>
+        <div class="step-text">AI generates the scaffolding fast. I shape the copy, layout and visual identity into something that looks like you, not a template.</div>
+        <div class="step-time">DAY 2</div>
+      </div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <div class="step-title">Refine together</div>
+        <div class="step-text">You see it live, we tighten anything that's off. Two rounds of revisions are built into the price.</div>
+        <div class="step-time">DAY 3 – 4</div>
+      </div>
+      <div class="step">
+        <div class="step-num">04</div>
+        <div class="step-title">Launch</div>
+        <div class="step-text">Pushed live to your hosting, logo files in your inbox, ready to take leads. You own everything.</div>
+        <div class="step-time">DAY 5</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WORK -->
+<section class="portfolio" id="work">
+  <div class="container">
+    <div class="section-eyebrow">Recent work</div>
+    <h2 class="section-title">Real businesses, <em>real launches.</em></h2>
+    <p class="section-lead">A selection of landing pages built and shipped for local South Wales operators.</p>
+
+    <div class="work-grid">
+      <a href="#" class="work-item large">
+        <div class="work-bg">
+          <div class="mock-ty">
+            <div class="lg">TY</div>
+            <div style="font-family:'Inter',sans-serif;font-size:0.7rem;letter-spacing:0.4em;margin-top:0.4rem;" class="accent">VEHICLE LOGISTICS</div>
+          </div>
+        </div>
+        <div class="work-overlay"></div>
+        <div class="work-info">
+          <div class="arrow">↗</div>
+          <div class="cat">Logistics · Newport</div>
+          <h4>TY Vehicle Logistics</h4>
+        </div>
+      </a>
+
+      <a href="#" class="work-item small">
+        <div class="work-bg">
+          <div class="mock-dragon">
+            <div class="icon">⛰</div>
+            <div class="name">Dragon UPVC</div>
+          </div>
+        </div>
+        <div class="work-overlay"></div>
+        <div class="work-info">
+          <div class="arrow">↗</div>
+          <div class="cat">Home improvement</div>
+          <h4>Dragon Windows</h4>
+        </div>
+      </a>
+
+      <a href="#" class="work-item third">
+        <div class="work-bg">
+          <div class="mock-isca">
+            <div class="icon">⚡</div>
+            <div class="name">Isca Energy</div>
+          </div>
+        </div>
+        <div class="work-overlay"></div>
+        <div class="work-info">
+          <div class="arrow">↗</div>
+          <div class="cat">Renewables</div>
+          <h4>Isca Energy SW</h4>
+        </div>
+      </a>
+
+      <a href="#" class="work-item third">
+        <div class="work-bg">
+          <div class="mock-pass">
+            <div class="icon">🚗</div>
+            <div class="name">Pass R Uss</div>
+          </div>
+        </div>
+        <div class="work-overlay"></div>
+        <div class="work-info">
+          <div class="arrow">↗</div>
+          <div class="cat">Driving school</div>
+          <h4>Pass R Uss</h4>
+        </div>
+      </a>
+
+      <a href="#" class="work-item third">
+        <div class="work-bg">
+          <div class="mock-davies">
+            <div class="icon">✿</div>
+            <div class="name">Davies-Kendall</div>
+          </div>
+        </div>
+        <div class="work-overlay"></div>
+        <div class="work-info">
+          <div class="arrow">↗</div>
+          <div class="cat">Garden services</div>
+          <h4>Davies-Kendall</h4>
+        </div>
+      </a>
+
+      <a href="#" class="work-item third">
+        <div class="work-bg">
+          <div class="mock-bethan">
+            <div class="icon">♪</div>
+            <div class="name">Bethan Searle</div>
+          </div>
+        </div>
+        <div class="work-overlay"></div>
+        <div class="work-info">
+          <div class="arrow">↗</div>
+          <div class="cat">Singer · Performer</div>
+          <h4>Bethan Searle</h4>
+        </div>
+      </a>
+
+      <a href="#" class="work-item third">
+        <div class="work-bg">
+          <div class="mock-hearth">
+            <div class="icon">🜂</div>
+            <div class="name">Hearth & Leaf</div>
+          </div>
+        </div>
+        <div class="work-overlay"></div>
+        <div class="work-info">
+          <div class="arrow">↗</div>
+          <div class="cat">Cigar community</div>
+          <h4>Hearth & Leaf</h4>
+        </div>
+      </a>
+
+      <a href="#" class="work-item third">
+        <div class="work-bg">
+          <div class="mock-skin">
+            <div class="icon">❋</div>
+            <div class="name">Skin & Soul</div>
+          </div>
+        </div>
+        <div class="work-overlay"></div>
+        <div class="work-info">
+          <div class="arrow">↗</div>
+          <div class="cat">Therapy studio</div>
+          <h4>Skin & Soul Studio</h4>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- HOSTING -->
+<section class="hosting">
+  <div class="container">
+    <div class="hosting-grid">
+      <div>
+        <div class="section-eyebrow">Hosting advice</div>
+        <h2 class="section-title">No mystery <em>monthly fees.</em></h2>
+        <p style="opacity:0.8;line-height:1.6;margin-top:1.5rem;">
+          Most hosting decisions for a small business are simple. Most agencies make them sound complicated so they can charge you a retainer. Here's the straight version.
+        </p>
+        <p style="opacity:0.8;line-height:1.6;margin-top:1rem;">
+          You'll get a recommendation tailored to your traffic, budget and how hands-on you want to be. Set up included.
+        </p>
+      </div>
+
+      <div class="hosting-options">
+        <div class="host-row">
+          <div class="host-icon">V</div>
+          <div class="host-info">
+            <h4>Vercel</h4>
+            <p>What I use most. Fast, generous free tier, custom domain support. Ideal for static landing pages.</p>
+          </div>
+          <div class="host-price">From free</div>
+        </div>
+        <div class="host-row">
+          <div class="host-icon">N</div>
+          <div class="host-info">
+            <h4>Netlify</h4>
+            <p>Equivalent to Vercel, slightly different developer ergonomics. Good fallback if you want forms built in.</p>
+          </div>
+          <div class="host-price">From free</div>
+        </div>
+        <div class="host-row">
+          <div class="host-icon">C</div>
+          <div class="host-info">
+            <h4>Cloudflare Pages</h4>
+            <p>Best for global speed and DDoS resilience. Worth it if you're running ads to the page.</p>
+          </div>
+          <div class="host-price">From free</div>
+        </div>
+        <div class="host-row">
+          <div class="host-icon">H</div>
+          <div class="host-info">
+            <h4>Your own domain</h4>
+            <p>Recommended via Cloudflare Registrar at cost or Namecheap. Cheapest, no upsell rubbish.</p>
+          </div>
+          <div class="host-price">£8–12/yr</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="faq">
+  <div class="container">
+    <div class="faq-grid">
+      <div>
+        <div class="section-eyebrow">Common questions</div>
+        <h2 class="section-title">The bits people <em>always ask.</em></h2>
+        <p style="opacity:0.7;margin-top:1.5rem;">Anything not covered? Just ask on the call.</p>
+      </div>
+
+      <div class="faq-list">
+        <div class="faq-item">
+          <div class="faq-q">
+            <span>What's the difference between Starter and Studio?</span>
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-a">Starter (£300) gets you a polished landing page, logo and hosting advice — everything you need to be online and taking enquiries. Studio (£500) adds extra revisions, image sourcing, Google Business Profile setup, basic SEO and analytics, and a faster three-day turnaround. Most clients pick Studio because the extras pay for themselves in the first month of leads.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">
+            <span>How can it be that fast?</span>
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-a">AI tools handle the parts that used to eat days, so the build is hours, not weeks. The time I save goes into the parts that actually matter: brand direction, copy, layout, the details that make it look bespoke instead of templated.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">
+            <span>Do I own the logo and the site?</span>
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-a">Completely. You get the source files, the deployment, the domain. Nothing's locked behind a subscription, no licensing tricks, no kill-switch if you stop talking to me.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">
+            <span>What if I want more than one page later?</span>
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-a">Easy. Most clients start with Starter or Studio, see how it goes, then either add pages later or move up to Atelier — the custom tier for multi-page sites, full brand systems, print-ready logos, workwear and signage advice. Quoted to fit, you only pay for what you actually need.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">
+            <span>Are you only working with Newport businesses?</span>
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-a">South Wales is the home base, but everything's done remotely so I work with businesses anywhere in the UK. Local just means I can also meet for a coffee if it helps.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">
+            <span>What if I don't have copy or photos?</span>
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-a">Most small businesses don't. Copy is included in the price, written from a short brief. Stock photography is sourced for free where it fits. If you need original photography, I can recommend someone local.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="contact-content">
+    <div class="section-eyebrow" style="justify-content:center;color:var(--sage-soft);">
+      <span>Ready when you are</span>
+    </div>
+    <h2>Let's get your business <em>online properly.</em></h2>
+    <p>Drop a message with what you do and roughly when you'd like to launch. I'll come back within a working day with the next step.</p>
+    <a href="mailto:hello@sagestudio.co.uk?subject=New%20project%20enquiry" class="contact-cta">
+      Start a project
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+    </a>
+    <div class="contact-secondary">
+      <a href="mailto:hello@sagestudio.co.uk">hello@sagestudio.co.uk</a>
+      <a href="https://wa.me/44">WhatsApp</a>
+      <span>Newport, South Wales</span>
+    </div>
+  </div>
+</section>
+
+<footer>
+  © Sage Studio · Built in Newport with care, coffee, and <span>a little AI</span>
+</footer>
+
+<script>
+  // FAQ accordion
+  document.querySelectorAll('.faq-item').forEach(item => {
+    item.addEventListener('click', () => {
+      const open = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!open) item.classList.add('open');
+    });
+  });
+
+  // Soft reveal on scroll
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.style.opacity = '1';
+        e.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, { threshold: 0.12 });
+
+  document.querySelectorAll('.compare-card, .step, .work-item, .host-row, .faq-item').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(20px)';
+    el.style.transition = 'opacity 0.7s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1)';
+    io.observe(el);
+  });
+</script>
+
+</body>
+</html>
