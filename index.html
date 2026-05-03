@@ -996,7 +996,7 @@
 
   .work-grid {
     display: grid;
-    grid-template-columns: repeat(12, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 1.5rem;
     margin-top: 3rem;
   }
@@ -1007,7 +1007,7 @@
     overflow: hidden;
     border: 1px solid var(--hairline);
     background: var(--cream);
-    aspect-ratio: 4 / 3;
+    aspect-ratio: 3 / 2;
     cursor: pointer;
     transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
     text-decoration: none;
@@ -1015,10 +1015,6 @@
   }
 
   .work-item:hover { transform: translateY(-6px); }
-
-  .work-item.large { grid-column: span 7; aspect-ratio: 16 / 10; }
-  .work-item.small { grid-column: span 5; }
-  .work-item.third { grid-column: span 4; aspect-ratio: 3 / 2; }
 
   .work-bg {
     position: absolute;
@@ -1103,15 +1099,6 @@
   }
   .mock-isca .icon { font-size: 2.5rem; margin-bottom: 0.4rem; }
   .mock-isca .name { font-family: 'Fraunces', serif; font-size: 1.4rem; letter-spacing: 0.05em; }
-
-  .mock-pass {
-    background: linear-gradient(135deg, #1e4d2b 0%, #4a8b5c 100%);
-    color: #f4f0e8;
-    width: 100%; height: 100%;
-    display: flex; flex-direction: column; justify-content: center; align-items: center;
-  }
-  .mock-pass .icon { font-size: 2.5rem; margin-bottom: 0.4rem; }
-  .mock-pass .name { font-family: 'Fraunces', serif; font-size: 1.3rem; }
 
   .mock-appian {
     background: linear-gradient(135deg, #0a1628 0%, #1e3a5f 100%);
@@ -1408,7 +1395,7 @@
     .atelier-mark { margin: 0; }
     .steps { grid-template-columns: 1fr 1fr; gap: 2.5rem 2rem; }
     .work-grid { grid-template-columns: 1fr; }
-    .work-item.large, .work-item.small, .work-item.third { grid-column: span 1; aspect-ratio: 4/3; }
+    .work-item { aspect-ratio: 4/3; }
     .hosting-grid, .faq-grid { grid-template-columns: 1fr; gap: 3rem; }
     .host-row { grid-template-columns: 50px 1fr; gap: 1rem; }
     .host-price { grid-column: 2; text-align: left; margin-top: 0.3rem; }
@@ -1664,7 +1651,7 @@
     <p class="section-lead">A selection of landing pages built and shipped for local South Wales operators.</p>
 
     <div class="work-grid">
-      <a href="https://ty-logistics.co.uk/" target="_blank" rel="noopener" class="work-item large">
+      <a href="https://ty-logistics.co.uk/" target="_blank" rel="noopener" class="work-item">
         <div class="work-bg">
           <div class="mock-ty">
             <div class="lg">TY</div>
@@ -1679,7 +1666,7 @@
         </div>
       </a>
 
-      <a href="https://dragonwindowsupvc.co.uk/" target="_blank" rel="noopener" class="work-item small">
+      <a href="https://dragonwindowsupvc.co.uk/" target="_blank" rel="noopener" class="work-item">
         <div class="work-bg">
           <div class="mock-dragon">
             <div class="icon">⛰</div>
@@ -1694,7 +1681,7 @@
         </div>
       </a>
 
-      <a href="https://isca-electrical.vercel.app/" target="_blank" rel="noopener" class="work-item third">
+      <a href="https://isca-electrical.vercel.app/" target="_blank" rel="noopener" class="work-item">
         <div class="work-bg">
           <div class="mock-isca">
             <div class="icon">⚡</div>
@@ -1709,22 +1696,7 @@
         </div>
       </a>
 
-      <a href="#" class="work-item third">
-        <div class="work-bg">
-          <div class="mock-pass">
-            <div class="icon">🚗</div>
-            <div class="name">Pass R Uss</div>
-          </div>
-        </div>
-        <div class="work-overlay"></div>
-        <div class="work-info">
-          <div class="arrow">↗</div>
-          <div class="cat">Driving school</div>
-          <h4>Pass R Uss</h4>
-        </div>
-      </a>
-
-      <a href="https://appian-cheat.vercel.app/" target="_blank" rel="noopener" class="work-item third">
+      <a href="https://appian-cheat.vercel.app/" target="_blank" rel="noopener" class="work-item">
         <div class="work-bg">
           <div class="mock-appian">
             <div class="icon">⌘</div>
@@ -1739,7 +1711,7 @@
         </div>
       </a>
 
-      <a href="https://western-recovery-group.vercel.app" target="_blank" rel="noopener" class="work-item third">
+      <a href="https://western-recovery-group.vercel.app" target="_blank" rel="noopener" class="work-item">
         <div class="work-bg">
           <div class="mock-western">
             <div class="icon">⚙</div>
@@ -1754,7 +1726,7 @@
         </div>
       </a>
 
-      <a href="https://www.hearthandleaf.co.uk/" target="_blank" rel="noopener" class="work-item third">
+      <a href="https://www.hearthandleaf.co.uk/" target="_blank" rel="noopener" class="work-item">
         <div class="work-bg">
           <div class="mock-hearth">
             <div class="icon">🜂</div>
@@ -1769,7 +1741,7 @@
         </div>
       </a>
 
-      <a href="https://skin-and-soul-studio.vercel.app/" target="_blank" rel="noopener" class="work-item third">
+      <a href="https://skin-and-soul-studio.vercel.app/" target="_blank" rel="noopener" class="work-item">
         <div class="work-bg">
           <div class="mock-skin">
             <div class="icon">❋</div>
