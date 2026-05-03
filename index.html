@@ -3,11 +3,108 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Sage Studio · Landing pages and logos for local businesses. Built in days, not weeks.</title>
-<meta name="description" content="Sage Studio designs landing pages and logos for small businesses across South Wales and the UK. AI speed, human craft. From £300, fixed price. Days, not weeks." />
+<meta name="theme-color" content="#2c3a30" />
+<meta name="author" content="Sage Studio" />
+<meta name="robots" content="index,follow,max-image-preview:large" />
+
+<title>Web Designer Newport · Landing Pages &amp; Logos | Sage Studio</title>
+<meta name="description" content="Sage Studio · web designer in Newport, South Wales. Landing pages and logos for local businesses, from £300 fixed price, live in 3–5 days." />
+
+<!-- TODO: switch canonical + og:url + JSON-LD URLs to https://sagestudio.co.uk/ once the custom domain is connected in Vercel. -->
+<link rel="canonical" href="https://sage-studio.vercel.app/" />
+
+<!-- Inline SVG favicon (matches the nav logo mark) -->
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='16' cy='16' r='15' fill='%23fbf9f4' stroke='%232c3a30' stroke-width='1.5'/><path d='M9 20 Q 12 8, 16 16 T 23 12' stroke='%235a6f5e' stroke-width='1.8' fill='none' stroke-linecap='round'/><circle cx='23' cy='12' r='2' fill='%23d4633e'/></svg>" />
+
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Sage Studio" />
+<meta property="og:title" content="Web Designer Newport · Landing Pages &amp; Logos | Sage Studio" />
+<meta property="og:description" content="Landing pages and logos for South Wales and UK businesses. From £300 fixed price, live in 3–5 days." />
+<meta property="og:url" content="https://sage-studio.vercel.app/" />
+<meta property="og:locale" content="en_GB" />
+<!-- TODO: replace og:image with a real 1200×630 PNG once we have a hero screenshot. -->
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Web Designer Newport · Landing Pages &amp; Logos | Sage Studio" />
+<meta name="twitter:description" content="Landing pages and logos for South Wales and UK businesses. From £300 fixed price, live in 3–5 days." />
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<!-- Structured data: ProfessionalService (Sage Studio) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "@id": "https://sage-studio.vercel.app/#business",
+  "name": "Sage Studio",
+  "description": "Web designer in Newport, South Wales. Landing pages and logos for small local businesses, built in 3–5 days from £300.",
+  "url": "https://sage-studio.vercel.app/",
+  "priceRange": "££",
+  "areaServed": [
+    { "@type": "Place", "name": "Newport, Wales" },
+    { "@type": "Place", "name": "South Wales" },
+    { "@type": "Place", "name": "United Kingdom" }
+  ],
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Newport",
+    "addressRegion": "Wales",
+    "addressCountry": "GB"
+  },
+  "email": "hello@sagestudio.co.uk",
+  "founder": { "@type": "Person", "name": "Leighton Rice" },
+  "knowsAbout": ["Landing page design", "Logo design", "Brand identity", "Web design", "Local SEO"],
+  "makesOffer": [
+    { "@type": "Offer", "name": "Starter", "price": "300", "priceCurrency": "GBP", "description": "Landing page, logo and hosting advice." },
+    { "@type": "Offer", "name": "Studio", "price": "500", "priceCurrency": "GBP", "description": "Starter plus extra revisions, image sourcing, Google Business Profile setup, basic SEO and analytics, three-day turnaround." },
+    { "@type": "Offer", "name": "Atelier", "description": "Multi-page sites, brand systems, print-ready logos. Quoted to fit." }
+  ]
+}
+</script>
+
+<!-- Structured data: FAQPage -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What's the difference between Starter and Studio?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Starter (£300) gets you a polished landing page, logo and hosting advice. Studio (£500) adds extra revisions, image sourcing, Google Business Profile setup, basic SEO and analytics, and a faster three-day turnaround." }
+    },
+    {
+      "@type": "Question",
+      "name": "How can it be that fast?",
+      "acceptedAnswer": { "@type": "Answer", "text": "AI tools handle the parts that used to eat days, so the build is hours, not weeks. The time saved goes into brand direction, copy, layout and the details that make it look bespoke." }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I own the logo and the site?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Completely. You get the source files, the deployment, the domain. Nothing's locked behind a subscription." }
+    },
+    {
+      "@type": "Question",
+      "name": "What if I want more than one page later?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Most clients start with Starter or Studio and then either add pages later or move up to Atelier — the custom tier for multi-page sites, full brand systems, and print-ready logos." }
+    },
+    {
+      "@type": "Question",
+      "name": "Are you only working with Newport businesses?",
+      "acceptedAnswer": { "@type": "Answer", "text": "South Wales is the home base, but everything is done remotely so I work with businesses anywhere in the UK." }
+    },
+    {
+      "@type": "Question",
+      "name": "What if I don't have copy or photos?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Copy is included in the price, written from a short brief. Stock photography is sourced for free where it fits, and original photography can be arranged with a local photographer." }
+    }
+  ]
+}
+</script>
 <style>
   :root {
     --sage-deep: #2c3a30;
@@ -1651,7 +1748,7 @@
     <p class="section-lead">A selection of landing pages built and shipped for local South Wales operators.</p>
 
     <div class="work-grid">
-      <a href="https://ty-logistics.co.uk/" target="_blank" rel="noopener" class="work-item">
+      <a href="https://ty-logistics.co.uk/" target="_blank" rel="noopener noreferrer" class="work-item">
         <div class="work-bg">
           <div class="mock-ty">
             <div class="lg">TY</div>
@@ -1666,7 +1763,7 @@
         </div>
       </a>
 
-      <a href="https://dragonwindowsupvc.co.uk/" target="_blank" rel="noopener" class="work-item">
+      <a href="https://dragonwindowsupvc.co.uk/" target="_blank" rel="noopener noreferrer" class="work-item">
         <div class="work-bg">
           <div class="mock-dragon">
             <div class="icon">⛰</div>
@@ -1681,7 +1778,7 @@
         </div>
       </a>
 
-      <a href="https://isca-electrical.vercel.app/" target="_blank" rel="noopener" class="work-item">
+      <a href="https://isca-electrical.vercel.app/" target="_blank" rel="noopener noreferrer" class="work-item">
         <div class="work-bg">
           <div class="mock-isca">
             <div class="icon">⚡</div>
@@ -1696,7 +1793,7 @@
         </div>
       </a>
 
-      <a href="https://appian-cheat.vercel.app/" target="_blank" rel="noopener" class="work-item">
+      <a href="https://appian-cheat.vercel.app/" target="_blank" rel="noopener noreferrer" class="work-item">
         <div class="work-bg">
           <div class="mock-appian">
             <div class="icon">⌘</div>
@@ -1711,7 +1808,7 @@
         </div>
       </a>
 
-      <a href="https://western-recovery-group.vercel.app" target="_blank" rel="noopener" class="work-item">
+      <a href="https://western-recovery-group.vercel.app" target="_blank" rel="noopener noreferrer" class="work-item">
         <div class="work-bg">
           <div class="mock-western">
             <div class="icon">⚙</div>
@@ -1726,7 +1823,7 @@
         </div>
       </a>
 
-      <a href="https://www.hearthandleaf.co.uk/" target="_blank" rel="noopener" class="work-item">
+      <a href="https://www.hearthandleaf.co.uk/" target="_blank" rel="noopener noreferrer" class="work-item">
         <div class="work-bg">
           <div class="mock-hearth">
             <div class="icon">🜂</div>
@@ -1741,7 +1838,7 @@
         </div>
       </a>
 
-      <a href="https://skin-and-soul-studio.vercel.app/" target="_blank" rel="noopener" class="work-item">
+      <a href="https://skin-and-soul-studio.vercel.app/" target="_blank" rel="noopener noreferrer" class="work-item">
         <div class="work-bg">
           <div class="mock-skin">
             <div class="icon">❋</div>
@@ -1884,7 +1981,7 @@
     </a>
     <div class="contact-secondary">
       <a href="mailto:hello@sagestudio.co.uk">hello@sagestudio.co.uk</a>
-      <a href="https://wa.me/44">WhatsApp</a>
+      <!-- TODO: restore WhatsApp link with full number, e.g. https://wa.me/447XXXXXXXXX -->
       <span>Newport, South Wales</span>
     </div>
   </div>

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://sage-studio.vercel.app/sitemap.xml
