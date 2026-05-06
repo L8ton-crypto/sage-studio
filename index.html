@@ -225,7 +225,7 @@
     display: grid;
     grid-template-columns: 1.4fr 1fr;
     gap: 4rem;
-    align-items: center;
+    align-items: start;
     overflow: hidden;
   }
 
@@ -1266,71 +1266,16 @@
 
   .work-item:hover .work-info .arrow { transform: translateY(0); opacity: 1; }
 
-  /* Mock previews: different look per business */
-  .mock-ty {
-    background: linear-gradient(135deg, #1a2438 0%, #2d4159 100%);
-    color: #f4f0e8;
-    padding: 2rem;
-    width: 100%; height: 100%;
-    display: flex; flex-direction: column; justify-content: center; align-items: center;
+  .work-shot {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+    display: block;
+    transition: transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1);
   }
-  .mock-ty .lg { font-family: 'Fraunces', serif; font-size: 2.5rem; font-weight: 600; letter-spacing: 0.1em; }
-  .mock-ty .accent { color: #f5b942; }
 
-  .mock-dragon {
-    background: linear-gradient(135deg, #6b1f1f 0%, #2c1010 100%);
-    color: #f4f0e8;
-    width: 100%; height: 100%;
-    display: flex; flex-direction: column; justify-content: center; align-items: center;
-    font-family: 'Fraunces', serif;
-  }
-  .mock-dragon .icon { font-size: 3rem; margin-bottom: 0.5rem; }
-  .mock-dragon .name { font-size: 1.5rem; letter-spacing: 0.15em; text-transform: uppercase; }
-
-  .mock-isca {
-    background: linear-gradient(135deg, #0a3a3a 0%, #1a5e5e 100%);
-    color: #c4f0e8;
-    width: 100%; height: 100%;
-    display: flex; flex-direction: column; justify-content: center; align-items: center;
-  }
-  .mock-isca .icon { font-size: 2.5rem; margin-bottom: 0.4rem; }
-  .mock-isca .name { font-family: 'Fraunces', serif; font-size: 1.4rem; letter-spacing: 0.05em; }
-
-  .mock-appian {
-    background: linear-gradient(135deg, #0a1628 0%, #1e3a5f 100%);
-    color: #6ec1ff;
-    width: 100%; height: 100%;
-    display: flex; flex-direction: column; justify-content: center; align-items: center;
-  }
-  .mock-appian .icon { font-size: 2.5rem; }
-  .mock-appian .name { font-family: 'JetBrains Mono', monospace; font-size: 1rem; font-weight: 500; letter-spacing: 0.1em; margin-top: 0.4rem; }
-
-  .mock-western {
-    background: linear-gradient(135deg, #1a1a1a 0%, #3a2a14 100%);
-    color: #f4c66a;
-    width: 100%; height: 100%;
-    display: flex; flex-direction: column; justify-content: center; align-items: center;
-  }
-  .mock-western .icon { font-size: 2.5rem; }
-  .mock-western .name { font-family: 'Inter', sans-serif; font-size: 1rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; margin-top: 0.4rem; }
-
-  .mock-hearth {
-    background: linear-gradient(135deg, #2d1810 0%, #5e3018 100%);
-    color: #f4e8d8;
-    width: 100%; height: 100%;
-    display: flex; flex-direction: column; justify-content: center; align-items: center;
-  }
-  .mock-hearth .icon { font-size: 2.5rem; margin-bottom: 0.4rem; }
-  .mock-hearth .name { font-family: 'Fraunces', serif; font-size: 1.3rem; letter-spacing: 0.08em; }
-
-  .mock-skin {
-    background: linear-gradient(135deg, #c4a89a 0%, #e8d4c4 100%);
-    color: #4a2c20;
-    width: 100%; height: 100%;
-    display: flex; flex-direction: column; justify-content: center; align-items: center;
-  }
-  .mock-skin .icon { font-size: 2.5rem; }
-  .mock-skin .name { font-family: 'Fraunces', serif; font-size: 1.4rem; font-style: italic; }
+  .work-item:hover .work-shot { transform: scale(1.04); }
 
   /* ─── HOSTING ADVICE ─── */
   .hosting {
@@ -1916,12 +1861,21 @@
     <p class="section-lead">A selection of landing pages built and shipped for local South Wales operators.</p>
 
     <div class="work-grid">
+      <a href="https://littlereaders.vercel.app/" target="_blank" rel="noopener noreferrer" class="work-item">
+        <div class="work-bg">
+          <img src="screenshots/little-readers.webp" alt="Little Readers — early literacy coaching site" class="work-shot" width="1200" height="800">
+        </div>
+        <div class="work-overlay"></div>
+        <div class="work-info">
+          <div class="arrow">↗</div>
+          <div class="cat">Early literacy · Ages 2–5</div>
+          <h4>Little Readers</h4>
+        </div>
+      </a>
+
       <a href="https://ty-logistics.co.uk/" target="_blank" rel="noopener noreferrer" class="work-item">
         <div class="work-bg">
-          <div class="mock-ty">
-            <div class="lg">TY</div>
-            <div style="font-family:'Inter',sans-serif;font-size:0.7rem;letter-spacing:0.4em;margin-top:0.4rem;" class="accent">VEHICLE LOGISTICS</div>
-          </div>
+          <img src="screenshots/ty-logistics.webp" alt="TY Vehicle Logistics — Newport vehicle transport site" class="work-shot" width="1200" height="800">
         </div>
         <div class="work-overlay"></div>
         <div class="work-info">
@@ -1933,10 +1887,7 @@
 
       <a href="https://dragonwindowsupvc.co.uk/" target="_blank" rel="noopener noreferrer" class="work-item">
         <div class="work-bg">
-          <div class="mock-dragon">
-            <div class="icon">⛰</div>
-            <div class="name">Dragon UPVC</div>
-          </div>
+          <img src="screenshots/dragon-upvc.webp" alt="Dragon Windows UPVC — South Wales home improvement site" class="work-shot" width="1200" height="800" loading="lazy">
         </div>
         <div class="work-overlay"></div>
         <div class="work-info">
@@ -1948,10 +1899,7 @@
 
       <a href="https://isca-electrical.vercel.app/" target="_blank" rel="noopener noreferrer" class="work-item">
         <div class="work-bg">
-          <div class="mock-isca">
-            <div class="icon">⚡</div>
-            <div class="name">Isca Energy</div>
-          </div>
+          <img src="screenshots/isca-electrical.webp" alt="Isca Energy SW — Newport electrical contractor site" class="work-shot" width="1200" height="800" loading="lazy">
         </div>
         <div class="work-overlay"></div>
         <div class="work-info">
@@ -1963,10 +1911,7 @@
 
       <a href="https://appian-cheat.vercel.app/" target="_blank" rel="noopener noreferrer" class="work-item">
         <div class="work-bg">
-          <div class="mock-appian">
-            <div class="icon">⌘</div>
-            <div class="name">Appian Cheat</div>
-          </div>
+          <img src="screenshots/appian-cheat.webp" alt="Appian Cheat — Appian developer tool site" class="work-shot" width="1200" height="800" loading="lazy">
         </div>
         <div class="work-overlay"></div>
         <div class="work-info">
@@ -1978,10 +1923,7 @@
 
       <a href="https://western-recovery-group.vercel.app" target="_blank" rel="noopener noreferrer" class="work-item">
         <div class="work-bg">
-          <div class="mock-western">
-            <div class="icon">⚙</div>
-            <div class="name">Western Recovery</div>
-          </div>
+          <img src="screenshots/western-recovery.webp" alt="Western Recovery Group — South Wales vehicle recovery site" class="work-shot" width="1200" height="800" loading="lazy">
         </div>
         <div class="work-overlay"></div>
         <div class="work-info">
@@ -1993,10 +1935,7 @@
 
       <a href="https://www.hearthandleaf.co.uk/" target="_blank" rel="noopener noreferrer" class="work-item">
         <div class="work-bg">
-          <div class="mock-hearth">
-            <div class="icon">🜂</div>
-            <div class="name">Hearth & Leaf</div>
-          </div>
+          <img src="screenshots/hearth-and-leaf.webp" alt="Hearth & Leaf — cigar community site" class="work-shot" width="1200" height="800" loading="lazy">
         </div>
         <div class="work-overlay"></div>
         <div class="work-info">
@@ -2008,10 +1947,7 @@
 
       <a href="https://skin-and-soul-studio.vercel.app/" target="_blank" rel="noopener noreferrer" class="work-item">
         <div class="work-bg">
-          <div class="mock-skin">
-            <div class="icon">❋</div>
-            <div class="name">Skin & Soul</div>
-          </div>
+          <img src="screenshots/skin-and-soul.webp" alt="Skin & Soul Studio — facial therapy studio site" class="work-shot" width="1200" height="800" loading="lazy">
         </div>
         <div class="work-overlay"></div>
         <div class="work-info">

@@ -1,0 +1,14 @@
+{
+  "name": "silures-studio-tools",
+  "private": true,
+  "version": "0.0.0",
+  "description": "Tooling for Silures Studio static site (screenshot capture, etc.)",
+  "type": "module",
+  "scripts": {
+    "screenshots": "node tools/capture-screenshots.mjs"
+  },
+  "devDependencies": {
+    "playwright": "^1.49.1",
+    "sharp": "^0.33.5"
+  }
+}
